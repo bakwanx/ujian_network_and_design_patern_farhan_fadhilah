@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ujian_network_and_design_patern_farhan_fadhilah">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".MyApp"
@@ -14,13 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ujian_network_and_design_patern_farhan_fadhilah">
         <activity
+            android:name=".activities.UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MovieDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activities.RegisterActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.LoginActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,9 +36,7 @@
         </activity>
         <activity
             android:name=".activities.HomeActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

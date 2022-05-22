@@ -13,9 +13,8 @@ class MovieViewModel(private val repository: MovieRepository): ViewModel() {
     fun getMovies(idGenre: String) = repository.getMovie(idGenre = idGenre)
     fun onLoading() = repository.loading
 
-
     override fun onCleared() {
         super.onCleared()
-        repository.cleared()
+        repository.jobCLeared()
     }
 }

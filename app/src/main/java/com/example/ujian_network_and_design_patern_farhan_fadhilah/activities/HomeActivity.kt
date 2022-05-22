@@ -30,6 +30,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         genreAdapter = GenreAdapter()
         movieAdapter = MovieAdapter( this@HomeActivity)
+
         binding.apply {
 
             mainViewModel.getUser().observe(this@HomeActivity){ user ->
@@ -47,13 +48,10 @@ class HomeActivity : AppCompatActivity() {
 
                 val size = genre.genres.size
                 genreAdapter.setItem(genre.genres)
-
                 val layoutManager = LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
                 rvGenre.layoutManager = layoutManager
                 genreAdapter.notifyDataSetChanged()
                 rvGenre.adapter = genreAdapter
-
-
             }
 
             movieViewModel.onLoading().observe(this@HomeActivity){
@@ -64,21 +62,18 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
 
-            fetchMovie()
-
-//            if(genreAdapter.getSelected()?.name!!.isNotEmpty()){
-//                Log.d("TAG", "genre: ${genreAdapter.getSelected()?.name}")
-//                fetchMovie(id = genreAdapter.getSelected()!!.id)
-//            }
-
-
+            rlProfile.setOnClickListener {
+                val intent = Intent(this@HomeActivity, UserProfileActivity::class.java)
+                startActivity(intent)
+            }
         }
-
+        fetchMovie()
     }
 
     fun fetchMovie(idGenre: String = ""){
         movieViewModel.getMovies(idGenre).observe(this@HomeActivity){ movie ->
             movieAdapter.setItem(movie.results)
+            movieAdapter.setIdGenre(idGenre)
             binding.rvMovie.adapter = movieAdapter
         }
     }

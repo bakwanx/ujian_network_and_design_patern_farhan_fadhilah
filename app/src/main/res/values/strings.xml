@@ -25,6 +25,8 @@
     <string name="sample_title">Transformer</string>
     <string name="genre_list">Daftar Genre</string>
     <string name="cancel">Batal</string>
+    <string name="sinopsis">Sinopsis</string>
+    <string name="recomendation">Rekomendasi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

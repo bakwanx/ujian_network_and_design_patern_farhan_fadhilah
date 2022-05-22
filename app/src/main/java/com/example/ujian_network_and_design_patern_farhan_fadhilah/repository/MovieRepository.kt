@@ -66,7 +66,7 @@ class MovieRepository {
         loading.postValue(false)
     }
 
-    fun cleared(){
+    fun jobCLeared(){
         job?.cancel()
     }
 }

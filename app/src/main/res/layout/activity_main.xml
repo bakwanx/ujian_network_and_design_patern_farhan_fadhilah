@@ -15,32 +15,48 @@
     <RelativeLayout
         android:id="@+id/rl_welcome"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="175dp"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="15dp"
-            android:layout_centerVertical="true">
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp">
 
-            <TextView
-                android:id="@+id/tv_name"
+            <RelativeLayout
+                android:id="@+id/rl_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/regular"
-                android:textColor="@color/toska"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_user_default"/>
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/regular"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/toska"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv_profile"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tv_genre_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
-                android:layout_below="@+id/tv_name"
+                android:layout_below="@+id/rl_profile"
                 android:text="@string/genre_list"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
