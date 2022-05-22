@@ -74,6 +74,12 @@ class UserRepository(
         return _user
     }
 
+    fun updateUser(user: User){
+        job = CoroutineScope(Dispatchers.IO).launch {
+            userDao.updateUser(user)
+        }
+    }
+
     fun clearPrefs(){
         val editor = sharedPreferences.edit()
         editor.clear()

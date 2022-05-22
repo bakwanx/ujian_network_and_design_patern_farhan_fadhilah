@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
+import androidx.room.Update
 import com.example.ujian_network_and_design_patern_farhan_fadhilah.model.User
 
 @Dao
@@ -20,4 +21,7 @@ interface UserDao {
 
     @Query("SELECT * FROM User WHERE userId=:userId")
     fun getUserById(userId: Int): User
+
+    @Update
+    fun updateUser(user: User):Int
 }
