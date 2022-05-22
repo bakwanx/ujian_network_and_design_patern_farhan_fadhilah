@@ -4,6 +4,7 @@
     <string name="fullname">Nama panjang</string>
     <string name="text_welcome">Selamat Datang</string>
     <string name="subtitle">Aplikasi Referensi Film</string>
+    <string name="text_reference_movies">Referensi Film</string>
     <string name="confirm_password">Konfirmasi Password</string>
     <string name="masuk">Masuk</string>
     <string name="text_question_regis">Belum punya akun?</string>
@@ -21,4 +22,9 @@
     <string name="toast_confirm_password">Konfirmasi password salah</string>
     <string name="toast_user_registered">Pengguna sudah terdaftar</string>
     <string name="toast_wrong_password">Password salah</string>
+    <string name="sample_title">Transformer</string>
+    <string name="genre_list">Daftar Genre</string>
+    <string name="cancel">Batal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

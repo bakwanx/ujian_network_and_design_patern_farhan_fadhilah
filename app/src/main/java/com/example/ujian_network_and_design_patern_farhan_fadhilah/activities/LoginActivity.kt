@@ -19,15 +19,25 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
+            loginViewModel.getIdUser().observe(this@LoginActivity){ idUser ->
+                if (!idUser.isEmpty()){
+                    val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
 
             btnLogin.setOnClickListener {
+
+
                 val email = edtEmailLogin.text.toString().trim()
                 val password = edtPasswordLogin.text.toString().trim()
                 if(checkInput(email, password)){
                     loginViewModel.login(email,password).observe(this@LoginActivity){ statusLogin ->
                         if (statusLogin){
-                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                             startActivity(intent)
+                            finish()
                         }else{
                             showToast(this@LoginActivity, getString(R.string.toast_wrong_password))
                         }
@@ -35,7 +45,10 @@ class LoginActivity : AppCompatActivity() {
                 }else{
                     showToast(this@LoginActivity, getString(R.string.toast_failed_login))
                 }
+
             }
+
+
 
             llToRegist.setOnClickListener {
                 val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
@@ -52,4 +65,5 @@ class LoginActivity : AppCompatActivity() {
             return  true
         }
     }
+
 }
